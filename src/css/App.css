@@ -1,0 +1,39 @@
+body{
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+.img_bg {
+    top: 0 !important;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: url('../img/login_bg1.jpg');
+    filter: blur(15px);
+    z-index: -99;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.card-body-width {
+    max-width: 1200px;
+    width: 100%;
+}
+.plogo {
+    max-width: 100px;
+}
+.custom_tr > th {
+    background-color: #333333;
+    color: #FFFFFF;
+}
+table tbody tr th.custom_th {
+    background-color: #CCCCCC;
+    max-width: 500px;
+    font-weight: 600;
+}
+.custom_btn {
+    width: 200px;
+}

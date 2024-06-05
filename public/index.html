@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#2471A3" />
+  <meta name="description"
+    content="Placement Prediction System, a Web App that Predicts Placement of students according to skillset and marks" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <title>Placement Predictor | Predict Student Placement</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet" />
+
+  <!-- Vendor CSS Files -->
+  <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="./vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Template Main CSS File -->
+  <link href="./css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <div id="root"></div>
+
+  <!-- Vendor JS Files -->
+  <script>
+    window.addEventListener('load', function () {
+      const select = (el, all = false) => {
+        el = el.trim()
+        if (all) {
+          return [...document.querySelectorAll(el)]
+        } else {
+          return document.querySelector(el)
+        }
+      }
+
+      /**
+       * Easy event listener function
+       */
+      const on = (type, el, listener, all = false) => {
+        if (all) {
+          select(el, all).forEach(e => e.addEventListener(type, listener))
+        } else {
+          select(el, all).addEventListener(type, listener)
+        }
+      }
+
+      /**
+       * Easy on scroll event listener 
+       */
+      const onscroll = (el, listener) => {
+        el.addEventListener('scroll', listener)
+      }
+
+      /**
+       * Sidebar toggle
+       */
+      if (select('.toggle-sidebar-btn')) {
+        on('click', '.toggle-sidebar-btn', function (e) {
+          select('body').classList.toggle('toggle-sidebar')
+        })
+      }
+    });
+  </script>
+</body>
+
+</html>
